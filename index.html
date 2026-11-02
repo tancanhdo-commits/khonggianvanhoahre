@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Không gian văn hóa cộng đồng Hrê - Lưu giữ, bảo tồn và lan tỏa bản sắc văn hóa dân tộc Hrê.">
+<title>Không gian văn hóa cộng đồng Hrê</title>
+<style>
+:root {
+  --green:#244b36;
+  --green2:#356448;
+  --gold:#d8ad62;
+  --cream:#fbf7ed;
+  --brown:#68452e;
+  --text:#303b32;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;
+  color:var(--text);
+  background:var(--cream);
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+header{
+  background:var(--green);
+  color:white;
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 3px 12px #0002;
+}
+.nav{
+  max-width:1200px;margin:auto;padding:13px 22px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;
+}
+.brand{font-size:19px;font-weight:bold;color:#f5d99e}
+.brand small{display:block;font-size:10px;letter-spacing:2px;color:#eee}
+nav{display:flex;gap:20px;align-items:center}
+nav a{font-size:13px;color:white;font-weight:600}
+nav a:hover{color:var(--gold)}
+.menu-btn{
+  display:none;background:none;border:1px solid #ffffff66;
+  color:white;padding:7px 12px;border-radius:6px;font-size:20px;
+}
+.hero{
+  min-height:560px;
+  background:
+    linear-gradient(90deg,rgba(15,42,28,.88),rgba(15,42,28,.25)),
+    url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+  display:flex;align-items:center;color:white;
+}
+.hero-content{max-width:1200px;margin:auto;padding:80px 25px;width:100%}
+.eyebrow{color:#f3d18e;letter-spacing:3px;font-size:13px;font-weight:bold}
+.hero h1{font-size:clamp(35px,6vw,65px);line-height:1.15;max-width:780px;margin:20px 0}
+.hero p{max-width:620px;font-size:18px;color:#f3eee4}
+.btn{
+ display:inline-block;background:var(--gold);color:#273c2d;
+ padding:13px 24px;border-radius:5px;font-weight:bold;margin-top:28px;
+}
+.btn:hover{background:#f0ce89}
+.section{max-width:1200px;margin:auto;padding:75px 24px}
+.heading{text-align:center;margin-bottom:38px}
+.heading span{color:#a87535;font-size:12px;font-weight:bold;letter-spacing:3px}
+.heading h2{font-size:32px;color:var(--green);margin:8px 0}
+.heading p{color:#777;max-width:700px;margin:auto}
+.intro-grid{
+ display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;
+}
+.intro-image{
+ min-height:350px;border-radius:12px;
+ background:url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=85") center/cover;
+}
+.intro-text h3{font-size:27px;color:var(--green);margin-bottom:15px}
+.intro-text p{margin-bottom:13px;color:#5c625b}
+.cards{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.card{
+ background:white;border-radius:10px;overflow:hidden;
+ box-shadow:0 5px 20px #283c2510;transition:.25s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 10px 25px #283c2520}
+.card img{width:100%;height:210px;object-fit:cover;display:block}
+.card-body{padding:21px}
+.card-body h3{color:var(--green);font-size:19px;margin-bottom:9px}
+.card-body p{font-size:14px;color:#687068}
+.card-body a{display:inline-block;margin-top:13px;color:#a06b2f;font-weight:bold;font-size:13px}
+.bg-green{background:#e9eee6}
+.quote{
+ background:var(--green);color:white;text-align:center;padding:65px 20px;
+}
+.quote h2{font-size:30px;color:#f4d18e;margin-bottom:15px}
+.quote p{max-width:750px;margin:auto;font-size:17px}
+.library{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:15px;
+}
+.library img{width:100%;height:210px;object-fit:cover;border-radius:8px}
+.callout{
+ background:#f0e6d3;border-left:5px solid var(--gold);
+ padding:25px;border-radius:5px;margin-top:30px;
+}
+footer{background:#183325;color:#e9eee8;padding:45px 20px}
+.footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer h3{color:#f3d18e;margin-bottom:12px}
+footer p{font-size:14px;color:#d0d8d0}
+.copyright{text-align:center;border-top:1px solid #ffffff25;margin-top:30px;padding-top:20px;font-size:12px;color:#c6d0c7}
+@media(max-width:850px){
+ nav{display:none;position:absolute;top:60px;left:0;right:0;
+ background:var(--green);padding:20px;flex-direction:column;align-items:flex-start}
+ nav.open{display:flex}
+ .menu-btn{display:block}
+ .intro-grid{grid-template-columns:1fr}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .library{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:550px){
+ .cards{grid-template-columns:1fr}
+ .hero{min-height:470px}
+ .hero p{font-size:16px}
+ .section{padding:55px 18px}
+ .heading h2{font-size:26px}
+ .library img{height:150px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="nav">
+  <a href="#home" class="brand">
+   KHÔNG GIAN VĂN HÓA HRÊ
+   <small>BẢN SẮC - KẾT NỐI - LAN TỎA</small>
+  </a>
+  <button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+  <nav>
+   <a href="#home">TRANG CHỦ</a>
+   <a href="#gioithieu">GIỚI THIỆU</a>
+   <a href="#vanhoa">VĂN HÓA</a>
+   <a href="#lehoi">LỄ HỘI</a>
+   <a href="#amthuc">ẨM THỰC</a>
+   <a href="#thuvien">THƯ VIỆN</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero" id="home">
+ <div class="hero-content">
+  <div class="eyebrow">DI SẢN VĂN HÓA - GIÁ TRỊ CỘNG ĐỒNG</div>
+  <h1>KHÔNG GIAN VĂN HÓA CỘNG ĐỒNG HRÊ</h1>
+  <p>Nơi lưu giữ những giá trị truyền thống, kết nối các thế hệ và lan tỏa vẻ đẹp văn hóa của cộng đồng người Hrê.</p>
+  <a class="btn" href="#gioithieu">KHÁM PHÁ VĂN HÓA HRÊ →</a>
+ </div>
+</section>
+
+<section class="section" id="gioithieu">
+ <div class="intro-grid">
+  <div class="intro-image"></div>
+  <div class="intro-text">
+   <span class="eyebrow">GIỚI THIỆU</span>
+   <h3>Vẻ đẹp văn hóa từ đại ngàn</h3>
+   <p>Người Hrê là một cộng đồng dân tộc có bản sắc văn hóa riêng, gắn bó với núi rừng, làng bản và những giá trị truyền thống được trao truyền qua nhiều thế hệ.</p>
+   <p>Không gian văn hóa này được xây dựng nhằm giới thiệu, lưu giữ và lan tỏa những nét đẹp trong đời sống, tiếng nói, trang phục, âm nhạc, lễ hội và phong tục của cộng đồng Hrê.</p>
+   <p>Đây cũng là nơi kết nối cộng đồng, khuyến khích thế hệ trẻ tìm hiểu, trân trọng và tiếp nối di sản văn hóa của cha ông.</p>
+  </div>
+ </div>
+</section>
+
+<section class="section bg-green" id="vanhoa">
+ <div class="heading">
+  <span>KHÁM PHÁ BẢN SẮC</span>
+  <h2>NHỮNG GIÁ TRỊ VĂN HÓA HRÊ</h2>
+  <p>Mỗi nét văn hóa là một câu chuyện, một ký ức và một niềm tự hào của cộng đồng.</p>
+ </div>
+ <div class="cards">
+  <article class="card">
+   <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80" alt="Sinh hoạt văn hóa cộng đồng">
+   <div class="card-body"><h3>Trang phục truyền thống</h3><p>Tìm hiểu trang phục, hoa văn, màu sắc và nét đẹp trong trang phục truyền thống Hrê.</p><a href="#thuvien">KHÁM PHÁ →</a></div>
+  </article>
+  <article class="card">
+   <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80" alt="Âm nhạc truyền thống">
+   <div class="card-body"><h3>Âm nhạc và dân ca</h3><p>Khám phá tiếng chiêng, làn điệu dân ca và những nhạc cụ truyền thống.</p><a href="#thuvien">KHÁM PHÁ →</a></div>
+  </article>
+  <article class="card">
+   <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80" alt="Lễ hội cộng đồng">
+   <div class="card-body"><h3>Lễ hội và phong tục</h3><p>Tìm hiểu các nghi lễ, phong tục và sinh hoạt văn hóa trong cộng đồng.</p><a href="#lehoi">KHÁM PHÁ →</a></div>
+  </article>
+  <article class="card">
+   <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Làng quê">
+   <div class="card-body"><h3>Nhà ở và làng bản</h3><p>Khám phá không gian cư trú, cảnh quan và nếp sống cộng đồng Hrê.</p><a href="#thuvien">KHÁM PHÁ →</a></div>
+  </article>
+  <article class="card" id="amthuc">
+   <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80" alt="Ẩm thực">
+   <div class="card-body"><h3>Ẩm thực truyền thống</h3><p>Giới thiệu những món ăn, thức uống và nét đặc sắc trong văn hóa ẩm thực.</p><a href="#thuvien">KHÁM PHÁ →</a></div>
+  </article>
+  <article class="card">
+   <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" alt="Nghề thủ công">
+   <div class="card-body"><h3>Nghề thủ công</h3><p>Giới thiệu nghề dệt, đan lát và những tri thức thủ công được truyền qua các thế hệ.</p><a href="#thuvien">KHÁM PHÁ →</a></div>
+  </article>
+ </div>
+</section>
+
+<section class="quote" id="lehoi">
+ <h2>GIỮ GÌN BẢN SẮC - TIẾP NỐI TƯƠNG LAI</h2>
+ <p>Văn hóa không chỉ nằm trong những trang sách, mà còn hiện diện trong tiếng nói, lời ca, nếp sống và ký ức của mỗi người. Bảo tồn văn hóa bắt đầu từ tình yêu và sự trân trọng của cộng đồng.</p>
+</section>
+
+<section class="section" id="thuvien">
+ <div class="heading">
+  <span>KHO TƯ LIỆU SỐ</span>
+  <h2>THƯ VIỆN HÌNH ẢNH</h2>
+  <p>Những hình ảnh lưu giữ vẻ đẹp thiên nhiên, con người và đời sống văn hóa.</p>
+ </div>
+ <div class="library">
+  <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80" alt="Thiên nhiên">
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Cảnh quan">
+  <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80" alt="Bình minh">
+  <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80" alt="Rừng núi">
+ </div>
+ <div class="callout">
+  <h3>Chung tay lưu giữ di sản văn hóa Hrê</h3>
+  <p>Mời nghệ nhân, người cao tuổi, đoàn thể, giáo viên, học sinh và các thành viên cộng đồng cùng đóng góp hình ảnh, câu chuyện, video và tư liệu văn hóa có giá trị.</p>
+ </div>
+</section>
+
+<footer>
+ <div class="footer-inner">
+  <div>
+   <h3>KHÔNG GIAN VĂN HÓA CỘNG ĐỒNG HRÊ</h3>
+   <p>Bản sắc - Kết nối - Bảo tồn và phát huy.</p>
+  </div>
+  <div>
+   <h3>THÔNG TIN</h3>
+   <p>Website giới thiệu và lưu giữ tư liệu văn hóa cộng đồng Hrê.</p>
+   <p>Địa bàn: Quảng Ngãi, Việt Nam.</p>
+  </div>
+ </div>
+ <div class="copyright">© 2026 - KHÔNG GIAN VĂN HÓA CỘNG ĐỒNG HRÊ | Cùng gìn giữ bản sắc văn hóa dân tộc.</div>
+</footer>
+
+<script>
+document.querySelectorAll('nav a').forEach(link=>{
+ link.addEventListener('click',()=>{
+  document.querySelector('nav').classList.remove('open');
+ });
+});
+</script>
+</body>
+</html>
