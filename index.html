@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -81,13 +80,42 @@ nav a:hover{color:var(--gold)}
 .card{
  background:white;border-radius:10px;overflow:hidden;
  box-shadow:0 5px 20px #283c2510;transition:.25s;
+ display:flex; flex-direction:column;
 }
 .card:hover{transform:translateY(-5px);box-shadow:0 10px 25px #283c2520}
-.card img{width:100%;height:210px;object-fit:cover;display:block}
-.card-body{padding:21px}
+
+/* CHỐNG TRÀN VIỀN ẢNH VÀ AUDIO */
+img {max-width: 100%; height: auto;}
+.card > img {width:100%;height:210px;object-fit:cover;display:block}
+audio {max-width: 100%; border-radius: 8px;}
+
+.card-body{padding:21px; flex-grow: 1;}
 .card-body h3{color:var(--green);font-size:19px;margin-bottom:9px}
 .card-body p{font-size:14px;color:#687068}
-.card-body a{display:inline-block;margin-top:13px;color:#a06b2f;font-weight:bold;font-size:13px}
+.card-body a.btn-link{display:inline-block;margin-top:13px;color:#a06b2f;font-weight:bold;font-size:13px}
+
+/* CSS CHO MENU NHÁNH CON */
+.menu-con {
+  display: none; 
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  background-color: #f6f8f5;
+  border-radius: 5px;
+  border: 1px solid #e1e6e1;
+}
+.menu-con.hien-thi { display: block; }
+.menu-con li a {
+  display: block;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #303b32;
+  font-size: 13px;
+  border-bottom: 1px solid #e1e6e1;
+}
+.menu-con li:last-child a { border-bottom: none; }
+.menu-con li a:hover { color: var(--green); background: #e9eee6; }
+
 .bg-green{background:#e9eee6}
 .quote{
  background:var(--green);color:white;text-align:center;padding:65px 20px;
@@ -107,6 +135,7 @@ footer{background:#183325;color:#e9eee8;padding:45px 20px}
 footer h3{color:#f3d18e;margin-bottom:12px}
 footer p{font-size:14px;color:#d0d8d0}
 .copyright{text-align:center;border-top:1px solid #ffffff25;margin-top:30px;padding-top:20px;font-size:12px;color:#c6d0c7}
+
 @media(max-width:850px){
  nav{display:none;position:absolute;top:60px;left:0;right:0;
  background:var(--green);padding:20px;flex-direction:column;align-items:flex-start}
@@ -149,7 +178,7 @@ footer p{font-size:14px;color:#d0d8d0}
 <section class="hero" id="home">
  <div class="hero-content">
   <div class="eyebrow">DI SẢN VĂN HÓA - GIÁ TRỊ CỘNG ĐỒNG</div>
-  <h1>KHÔNG GIAN VĂN HÓA CỘNG ĐỒNG H'RÊ </h1>
+  <h1>KHÔNG GIAN VĂN HÓA CỘNG ĐỒNG H'RÊ</h1>
   <p>Nơi lưu giữ những giá trị truyền thống, kết nối các thế hệ và lan tỏa vẻ đẹp văn hóa của cộng đồng người H'rê.</p>
   <a class="btn" href="#gioithieu">KHÁM PHÁ VĂN HÓA H'RÊ →</a>
  </div>
@@ -174,45 +203,85 @@ footer p{font-size:14px;color:#d0d8d0}
   <h2>NHỮNG GIÁ TRỊ VĂN HÓA H'RÊ</h2>
   <p>Mỗi nét văn hóa là một câu chuyện, một ký ức và một niềm tự hào của cộng đồng.</p>
  </div>
+ 
  <div class="cards">
+  <!-- Card 1 -->
   <article class="card">
    <img src="naubanhtet.jpg" alt="Sinh hoạt văn hóa cộng đồng">
-   <div class="card-body"><h3>Trang phục truyền thống</h3><p>Tìm hiểu trang phục, hoa văn, màu sắc và nét đẹp trong trang phục truyền thống H'rê.</p><a href="#thuvien">KHÁM PHÁ →</a></div>
-    <img src="trang-phuc.jfif" alt="Trang phục H'rê" style="max-width: 100%;">
+   <div class="card-body">
+     <h3>Trang phục truyền thống</h3>
+     <p>Tìm hiểu trang phục, hoa văn, màu sắc và nét đẹp trong trang phục truyền thống H'rê.</p>
+     <!-- Ảnh phụ nằm gọn bên trong card -->
+     <img src="trang-phuc.jfif" alt="Trang phục H'rê" style="border-radius: 5px; margin-top: 10px;">
+     <a href="#thuvien" class="btn-link">KHÁM PHÁ →</a>
+   </div>
   </article>
+
+  <!-- Card 2 -->
   <article class="card">
    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80" alt="Âm nhạc truyền thống">
-   <div class="card-body"><h3>Âm nhạc và dân ca</h3><p>Khám phá tiếng chiêng, làn điệu dân ca và những nhạc cụ truyền thống.</p><a href="#thuvien">KHÁM PHÁ →</a></div>
+   <div class="card-body">
+     <h3>Âm nhạc và dân ca</h3>
+     <p>Khám phá tiếng chiêng, làn điệu dân ca và những nhạc cụ truyền thống.</p>
+     <!-- Chuyển Audio Player vào bên trong card-body để gọn gàng -->
+     <div class="audio-player" style="margin-top: 15px;">
+       <p style="font-size: 13px; font-weight: bold; margin-bottom: 5px; color: #a87535;">Thưởng thức âm nhạc H'rê:</p>
+       <audio controls loop>
+         <source src="batoqueem.mp3" type="audio/mpeg">
+         Trình duyệt không hỗ trợ thẻ audio.
+       </audio>
+     </div>
+     <a href="#thuvien" class="btn-link">KHÁM PHÁ →</a>
+   </div>
   </article>
+
+  <!-- Card 3 -->
   <article class="card">
-    <div class="audio-player" style="text-align: center; margin: 20px 0;">
-  <p><b>Thưởng thức âm nhạc H'rê:</b></p>
-  <audio controls loop>
-    <source src="batoqueem.mp3" type="audio/mpeg">
-    Trình duyệt của bạn không hỗ trợ thẻ audio.
-  </audio>
-</div>
    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80" alt="Lễ hội cộng đồng">
-   <div class="card-body"><h3>Lễ hội và phong tục</h3><p>Tìm hiểu các nghi lễ, phong tục và sinh hoạt văn hóa trong cộng đồng.</p><a href="#lehoi">KHÁM PHÁ →</a></div>
+   <div class="card-body">
+     <h3>Lễ hội và phong tục</h3>
+     <p>Tìm hiểu các nghi lễ, phong tục và sinh hoạt văn hóa trong cộng đồng.</p>
+     
+     <!-- Nhánh con (Danh sách ẩn đã được tích hợp đúng) -->
+     <div class="kham-pha-wrapper">
+       <a href="#" class="btn-link" onclick="toggleMenu(event)">KHÁM PHÁ ▾</a>
+       <ul id="nhanhCon" class="menu-con">
+         <li><a href="#">Lễ hội mừng lúa mới</a></li>
+         <li><a href="#">Phong tục cưới hỏi</a></li>
+         <li><a href="#">Nghệ thuật cồng chiêng</a></li>
+       </ul>
+     </div>
+   </div>
   </article>
+
+  <!-- Card 4 -->
   <article class="card">
-    <!-- Nhánh con (Danh sách ẩn) -->
-  <ul id="nhanhCon" class="menu-con">
-    <li><a href="#">Lễ hội mừng lúa mới</a></li>
-    <li><a href="#">Phong tục cưới hỏi</a></li>
-    <li><a href="#">Nghệ thuật cồng chiêng</a></li>
-  </ul>
-</div>
-  <img src="nha san va ruong hre.jpg" alt="Làng quê">
-   <div class="card-body"><h3>Nhà ở và làng bản</h3><p>Khám phá không gian cư trú, cảnh quan và nếp sống cộng đồng H'rê.</p><a href="#thuvien">KHÁM PHÁ →</a></div>
+   <img src="nha san va ruong hre.jpg" alt="Làng quê">
+   <div class="card-body">
+     <h3>Nhà ở và làng bản</h3>
+     <p>Khám phá không gian cư trú, cảnh quan và nếp sống cộng đồng H'rê.</p>
+     <a href="#thuvien" class="btn-link">KHÁM PHÁ →</a>
+   </div>
   </article>
+
+  <!-- Card 5 -->
   <article class="card" id="amthuc">
    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80" alt="Ẩm thực">
-   <div class="card-body"><h3>Ẩm thực truyền thống</h3><p>Giới thiệu những món ăn, thức uống và nét đặc sắc trong văn hóa ẩm thực.</p><a href="#thuvien">KHÁM PHÁ →</a></div>
+   <div class="card-body">
+     <h3>Ẩm thực truyền thống</h3>
+     <p>Giới thiệu những món ăn, thức uống và nét đặc sắc trong văn hóa ẩm thực.</p>
+     <a href="#thuvien" class="btn-link">KHÁM PHÁ →</a>
+   </div>
   </article>
+
+  <!-- Card 6 -->
   <article class="card">
    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" alt="Nghề thủ công">
-   <div class="card-body"><h3>Nghề thủ công</h3><p>Giới thiệu nghề dệt, đan lát và những tri thức thủ công được truyền qua các thế hệ.</p><a href="#thuvien">KHÁM PHÁ →</a></div>
+   <div class="card-body">
+     <h3>Nghề thủ công</h3>
+     <p>Giới thiệu nghề dệt, đan lát và những tri thức thủ công được truyền qua các thế hệ.</p>
+     <a href="#thuvien" class="btn-link">KHÁM PHÁ →</a>
+   </div>
   </article>
  </div>
 </section>
@@ -243,7 +312,7 @@ footer p{font-size:14px;color:#d0d8d0}
 <footer>
  <div class="footer-inner">
   <div>
-   <h3>KHÔNG GIAN VĂN HÓA CỘNG ĐỒNG H'RÊ </h3>
+   <h3>KHÔNG GIAN VĂN HÓA CỘNG ĐỒNG H'RÊ</h3>
    <p>Bản sắc - Kết nối - Bảo tồn và phát huy.</p>
   </div>
   <div>
@@ -256,11 +325,19 @@ footer p{font-size:14px;color:#d0d8d0}
 </footer>
 
 <script>
+// Script đóng menu mobile khi bấm link
 document.querySelectorAll('nav a').forEach(link=>{
  link.addEventListener('click',()=>{
   document.querySelector('nav').classList.remove('open');
  });
 });
+
+// Script bật/tắt nhánh con (Dropdown)
+function toggleMenu(event) {
+  event.preventDefault(); 
+  var menu = document.getElementById("nhanhCon");
+  menu.classList.toggle("hien-thi");
+}
 </script>
 </body>
 </html>
