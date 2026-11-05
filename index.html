@@ -7,14 +7,16 @@
 <title>Không gian văn hóa cộng đồng H'rê - Âm vang đại ngàn</title>
 <style>
 :root {
-  /* BẢNG MÀU LÀNG QUÊ & THAN HỒNG */
-  --earth: #4a2e1b;     /* Nâu đất sét */
-  --wood: #7d4928;      /* Nâu gỗ mộc */
-  --fire: #d94a11;      /* Đỏ cam lửa */
-  --ember: #f09235;     /* Vàng cam than hồng */
-  --straw: #fcf6e8;     /* Vàng rơm (Nền chính) */
-  --dark: #21140d;      /* Đen khói / Tro bóng đêm */
-  --text: #3d2616;      /* Chữ chính nâu đen */
+  /* BẢNG MÀU LÀNG QUÊ SÁNG (LIGHT THEME) */
+  --earth: #9c4b22;     /* Nâu đất đỏ (sáng hơn) */
+  --wood: #c98255;      /* Nâu gỗ sáng */
+  --fire: #ea580c;      /* Đỏ cam rực rỡ */
+  --ember: #f97316;     /* Cam than hồng */
+  --straw: #fffaf4;     /* Vàng rơm sáng (Nền chính) */
+  --header-bg: #ffffff; /* Trắng sáng cho Header */
+  --footer-bg: #4a2815; /* Nâu gỗ đậm cho Footer */
+  --text: #452616;      /* Chữ chính nâu mộc mạc */
+  --text-light: #704733;/* Chữ phụ */
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -26,44 +28,44 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 
-/* HEADER & MENU MÀU ĐEN KHÓI VIỀN LỬA */
+/* HEADER & MENU (NỀN SÁNG, VIỀN CAM) */
 header {
-  background: var(--dark);
-  color: white;
+  background: var(--header-bg);
+  color: var(--text);
   position: sticky; top: 0; z-index: 100;
   border-bottom: 2px solid var(--fire);
-  box-shadow: 0 4px 15px rgba(217, 74, 17, 0.2); /* Ánh sáng hắt nhẹ */
+  box-shadow: 0 4px 15px rgba(234, 88, 12, 0.1); 
 }
 .nav {
-  max-width: 1200px; margin: auto; padding: 13px 22px;
+  max-width: 1200px; margin: auto; padding: 10px 22px;
   display: flex; align-items: center; justify-content: space-between;
   gap: 20px;
 }
-.brand { font-size: 20px; font-weight: bold; color: var(--ember); text-transform: uppercase; }
-.brand small { display: block; font-size: 10px; letter-spacing: 3px; color: #d6ccbd; margin-top: 3px; }
+.brand { font-size: 20px; font-weight: 900; color: var(--fire); text-transform: uppercase; }
+.brand small { display: block; font-size: 10px; letter-spacing: 3px; color: var(--wood); margin-top: 3px; font-weight: 600;}
 
-/* CSS Menu Dropdown */
+/* CSS Menu */
 nav { display: block; }
 nav ul {
-  list-style: none; display: flex; gap: 20px; align-items: center;
+  list-style: none; display: flex; gap: 24px; align-items: center;
 }
 nav li { position: relative; }
 nav > ul > li > a {
-  font-size: 14px; color: #fff; font-weight: 600;
+  font-size: 14px; color: var(--text); font-weight: 700;
   display: flex; align-items: center; gap: 5px;
-  padding: 10px 0; transition: 0.3s;
+  padding: 15px 0; transition: 0.3s;
 }
-nav a:hover { color: var(--ember); text-shadow: 0 0 8px rgba(240, 146, 53, 0.5); }
+nav a:hover { color: var(--fire); }
 
-/* Sub-menu (Nhánh thả xuống màu nâu gỗ) */
+/* Sub-menu (Nhánh thả xuống màu nền kem sáng) */
 nav .dropdown {
-  position: absolute; top: 100%; left: 0;
-  background: var(--earth);
-  min-width: 230px;
+  position: absolute; top: 100%; left: -10px;
+  background: #ffffff;
+  min-width: 240px;
   display: flex; flex-direction: column;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  border-radius: 0 0 6px 6px;
-  border-top: 2px solid var(--ember);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  border-top: 3px solid var(--fire);
   opacity: 0; visibility: hidden;
   transform: translateY(10px); transition: all 0.3s ease; z-index: 200;
 }
@@ -71,152 +73,151 @@ nav li:hover .dropdown {
   opacity: 1; visibility: visible; transform: translateY(0);
 }
 nav .dropdown a {
-  padding: 12px 18px; font-size: 13.5px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  font-weight: normal; color: #f2e3d5;
+  padding: 14px 20px; font-size: 14px; font-weight: 500;
+  border-bottom: 1px solid #f0e6dc;
+  color: var(--text);
 }
 nav .dropdown a:last-child { border-bottom: none; }
-nav .dropdown a:hover { background: var(--wood); color: var(--ember); padding-left: 24px; transition: 0.2s; }
+nav .dropdown a:hover { background: #fff5eb; color: var(--fire); padding-left: 26px; transition: 0.2s; }
 
 .menu-btn {
   display: none; background: none; border: 1px solid var(--wood);
-  color: var(--ember); padding: 7px 12px; border-radius: 6px; font-size: 20px; cursor: pointer;
+  color: var(--fire); padding: 7px 12px; border-radius: 6px; font-size: 20px; cursor: pointer;
 }
 
-/* HERO SECTION - ẤM ÁP ÁNH LỬA ĐÊM ĐẠI NGÀN */
+/* HERO SECTION - SÁNG VÀ ẤM */
 .hero {
-  min-height: 580px;
+  min-height: 550px;
   background:
-    linear-gradient(90deg, rgba(26, 15, 8, 0.95), rgba(74, 46, 27, 0.4)),
+    linear-gradient(90deg, rgba(156, 75, 34, 0.9), rgba(234, 88, 12, 0.4)),
     url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1800&q=85") center/cover;
   display: flex; align-items: center; color: white;
 }
 .hero-content { max-width: 1200px; margin: auto; padding: 80px 25px; width: 100%; }
-.eyebrow { color: var(--ember); letter-spacing: 3px; font-size: 13px; font-weight: bold; text-transform: uppercase; }
-.hero h1 { font-size: clamp(35px, 6vw, 62px); line-height: 1.15; max-width: 780px; margin: 20px 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-.hero p { max-width: 620px; font-size: 18px; color: #ecdcca; }
+.eyebrow { color: #fed7aa; letter-spacing: 3px; font-size: 13px; font-weight: bold; text-transform: uppercase; }
+.hero h1 { font-size: clamp(35px, 6vw, 62px); line-height: 1.15; max-width: 780px; margin: 20px 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+.hero p { max-width: 620px; font-size: 18px; color: #ffedd5; }
 
-/* Nút bấm lửa */
+/* Nút bấm */
 .btn {
   display: inline-block; 
-  background: linear-gradient(135deg, var(--fire), #e06616); 
+  background: var(--fire); 
   color: white;
-  padding: 13px 26px; border-radius: 4px; font-weight: bold; margin-top: 28px;
-  transition: 0.3s; box-shadow: 0 4px 15px rgba(217, 74, 17, 0.3);
+  padding: 14px 28px; border-radius: 6px; font-weight: bold; margin-top: 28px;
+  transition: 0.3s; box-shadow: 0 4px 15px rgba(234, 88, 12, 0.4);
 }
 .btn:hover { 
-  background: linear-gradient(135deg, var(--ember), var(--fire)); 
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(217, 74, 17, 0.5); 
+  background: #c2410c; 
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.5); 
 }
 
 /* SECTIONS CHUNG */
 .section { max-width: 1200px; margin: auto; padding: 85px 24px; }
-.heading { text-align: center; margin-bottom: 45px; }
-.heading span { color: var(--fire); font-size: 13px; font-weight: bold; letter-spacing: 3px; }
-.heading h2 { font-size: 34px; color: var(--earth); margin: 8px 0; }
-.heading p { color: #6e5542; max-width: 700px; margin: auto; }
+.heading { text-align: center; margin-bottom: 50px; }
+.heading span { color: var(--fire); font-size: 13px; font-weight: 800; letter-spacing: 3px; }
+.heading h2 { font-size: 36px; color: var(--earth); margin: 8px 0; }
+.heading p { color: var(--text-light); max-width: 700px; margin: auto; font-size: 16px; }
 
 .intro-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: center; }
 .intro-image {
-  min-height: 380px; border-radius: 8px;
-  box-shadow: -15px 15px 0px var(--wood);
+  min-height: 400px; border-radius: 12px;
+  box-shadow: -15px 15px 0px #fed7aa; /* Đổ bóng màu kem cam sáng */
   background: url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=85") center/cover;
 }
-.intro-text h3 { font-size: 28px; color: var(--earth); margin-bottom: 18px; }
-.intro-text p { margin-bottom: 15px; color: #573e2d; }
+.intro-text h3 { font-size: 28px; color: var(--earth); margin-bottom: 20px; }
+.intro-text p { margin-bottom: 16px; color: var(--text-light); }
 
-/* GRID THẺ BÀI (CARDS) */
-.bg-warm { background: #f5eedc; border-top: 1px dashed #dcbca3; border-bottom: 1px dashed #dcbca3; }
-.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+/* GRID THẺ BÀI (CARDS) - NỀN SÁNG, NỔI BẬT */
+.bg-warm { background: #fff1e6; border-top: 1px solid #fcdbce; border-bottom: 1px solid #fcdbce; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .card {
-  background: #fffdf9; border-radius: 8px; overflow: hidden;
-  border: 1px solid rgba(125, 73, 40, 0.15);
-  box-shadow: 0 4px 15px rgba(61, 38, 22, 0.05); transition: 0.3s;
+  background: #ffffff; border-radius: 12px; overflow: hidden;
+  border: 1px solid #f3e5db;
+  box-shadow: 0 10px 25px rgba(156, 75, 34, 0.08); transition: 0.3s;
   display: flex; flex-direction: column;
 }
 .card:hover { 
-  transform: translateY(-6px); 
-  border-color: rgba(240, 146, 53, 0.4);
-  box-shadow: 0 12px 25px rgba(217, 74, 17, 0.12); /* Sáng viền cam nhẹ */
+  transform: translateY(-8px); 
+  border-color: #fca5a5;
+  box-shadow: 0 15px 35px rgba(234, 88, 12, 0.15);
 }
 
 img { max-width: 100%; height: auto; }
-.card > img { width: 100%; height: 220px; object-fit: cover; display: block; border-bottom: 2px solid var(--fire); }
-audio { max-width: 100%; border-radius: 8px; height: 35px; }
+.card > img { width: 100%; height: 230px; object-fit: cover; display: block; border-bottom: 3px solid var(--ember); }
+audio { max-width: 100%; border-radius: 8px; height: 35px; outline: none; }
 
-.card-body { padding: 24px; flex-grow: 1; }
-.card-body h3 { color: var(--earth); font-size: 20px; margin-bottom: 10px; }
-.card-body p { font-size: 14.5px; color: #6e5542; }
-.card-body a.btn-link { display: inline-block; margin-top: 15px; color: var(--fire); font-weight: bold; font-size: 14px; transition: 0.2s; }
-.card-body a.btn-link:hover { color: var(--ember); letter-spacing: 1px; }
+.card-body { padding: 26px; flex-grow: 1; }
+.card-body h3 { color: var(--earth); font-size: 21px; margin-bottom: 12px; font-weight: 700; }
+.card-body p { font-size: 15px; color: var(--text-light); line-height: 1.6; }
+.card-body a.btn-link { display: inline-block; margin-top: 18px; color: var(--fire); font-weight: 800; font-size: 14px; transition: 0.2s; }
+.card-body a.btn-link:hover { color: #c2410c; letter-spacing: 1px; }
 
 /* Menu nhánh con trong Card */
 .menu-con {
   display: none; list-style: none; padding: 0; margin-top: 15px;
-  background-color: var(--straw); border-radius: 4px; border: 1px dashed #dcbca3;
+  background-color: #fff9f5; border-radius: 6px; border: 1px dashed #fdba74;
 }
 .menu-con.hien-thi { display: block; }
 .menu-con li a {
-  display: block; padding: 10px 12px; text-decoration: none; color: var(--text); font-size: 13.5px; border-bottom: 1px dashed #efe0ce;
+  display: block; padding: 12px 15px; text-decoration: none; color: var(--text); font-size: 14px; border-bottom: 1px dashed #fed7aa; font-weight: 500;
 }
 .menu-con li:last-child a { border-bottom: none; }
-.menu-con li a:hover { color: var(--fire); background: #fdfaf3; padding-left: 18px; transition: 0.2s; }
+.menu-con li a:hover { color: var(--fire); background: #fff2e6; padding-left: 20px; transition: 0.2s; }
 
-/* QUOTE KHÔNG GIAN BẾP LỬA ĐÊM */
+/* QUOTE KHÔNG GIAN BẾP LỬA */
 .quote { 
-  background: linear-gradient(rgba(33, 20, 13, 0.85), rgba(33, 20, 13, 0.9)), 
+  background: linear-gradient(rgba(156, 75, 34, 0.85), rgba(156, 75, 34, 0.95)), 
               url('https://images.unsplash.com/photo-1533559388836-8e5033c4eb3a?auto=format&fit=crop&w=1200&q=80') center/cover fixed; 
-  color: white; text-align: center; padding: 80px 20px;
-  border-top: 3px solid var(--fire);
-  border-bottom: 3px solid var(--fire);
+  color: white; text-align: center; padding: 90px 20px;
 }
-.quote h2 { font-size: 32px; color: var(--ember); margin-bottom: 18px; text-shadow: 0 0 10px rgba(240, 146, 53, 0.5); }
-.quote p { max-width: 750px; margin: auto; font-size: 18px; color: #f2e3d5; }
+.quote h2 { font-size: 34px; color: #fed7aa; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+.quote p { max-width: 800px; margin: auto; font-size: 19px; color: #ffedd5; line-height: 1.8; }
 
 /* THƯ VIỆN */
-.library { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-.library img { width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 2px solid #e1cbb3; transition: 0.3s; }
-.library img:hover { border-color: var(--fire); transform: scale(1.02); }
+.library { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.library img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; cursor: pointer; }
+.library img:hover { transform: scale(1.03); box-shadow: 0 10px 25px rgba(234, 88, 12, 0.2); }
 
 .callout {
-  background: #ecdcca; border-left: 5px solid var(--fire);
-  padding: 30px; border-radius: 4px; margin-top: 40px; box-shadow: inset 0 0 20px rgba(255,255,255,0.5);
+  background: #ffedd5; border-left: 6px solid var(--fire);
+  padding: 35px; border-radius: 8px; margin-top: 50px; 
 }
-.callout h3 { color: var(--earth); margin-bottom: 8px; }
+.callout h3 { color: var(--earth); margin-bottom: 10px; font-size: 22px; }
 
-/* FOOTER ĐEN KHÓI */
-footer { background: var(--dark); color: #c4b5a6; padding: 50px 20px 30px; border-top: 4px solid var(--wood); }
-.footer-inner { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
-footer h3 { color: var(--ember); margin-bottom: 15px; font-size: 16px; }
-footer p { font-size: 14px; margin-bottom: 8px; }
-.copyright { text-align: center; border-top: 1px dashed rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; font-size: 12.5px; color: #8e7d70; }
+/* FOOTER ĐẬM ẤM */
+footer { background: var(--footer-bg); color: #fed7aa; padding: 60px 20px 30px; border-top: 5px solid var(--fire); }
+.footer-inner { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+footer h3 { color: #ffffff; margin-bottom: 20px; font-size: 18px; letter-spacing: 1px; }
+footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
+.copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 25px; font-size: 13.5px; color: #d6bc98; }
 
 /* ĐÁP ỨNG THIẾT BỊ DI ĐỘNG */
 @media(max-width: 850px) {
   nav { 
-    display: none; position: absolute; top: 60px; left: 0; right: 0; 
-    background: var(--dark); padding: 20px; border-bottom: 2px solid var(--fire);
+    display: none; position: absolute; top: 65px; left: 0; right: 0; 
+    background: #ffffff; padding: 20px; border-bottom: 3px solid var(--fire);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   }
   nav.open { display: block; }
   nav ul { flex-direction: column; align-items: flex-start; gap: 5px; width: 100%; }
-  nav li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  nav li { width: 100%; border-bottom: 1px solid #f0e6dc; }
   nav li:last-child { border-bottom: none; }
   nav > ul > li > a { padding: 15px 0; width: 100%; justify-content: space-between; font-size: 15px; }
   
   nav .dropdown {
-    position: static; box-shadow: none; background: rgba(0,0,0,0.2);
+    position: static; box-shadow: none; background: #fff9f5;
     opacity: 1; visibility: visible; transform: none; border: none;
-    display: none; border-left: 2px solid var(--fire); margin-left: 10px; margin-bottom: 10px;
+    display: none; border-left: 3px solid var(--fire); margin-left: 10px; margin-bottom: 15px;
   }
   nav li:hover .dropdown { display: flex; }
-  nav .dropdown a { padding: 12px 15px; border-bottom: none; color: #d0c2b5; }
+  nav .dropdown a { padding: 12px 15px; border-bottom: 1px solid #fce7d2; color: var(--text); }
 
   .menu-btn { display: block; }
-  .intro-grid { grid-template-columns: 1fr; gap: 30px; }
-  .intro-image { min-height: 250px; box-shadow: none; border-bottom: 5px solid var(--wood); }
+  .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+  .intro-image { min-height: 280px; box-shadow: none; }
   .cards { grid-template-columns: repeat(2, 1fr); }
-  .library { grid-template-columns: repeat(2, 1fr); }
+  .library { grid-template-columns: repeat(2, 1fr); gap: 10px; }
 }
 @media(max-width: 550px) {
   .cards { grid-template-columns: 1fr; }
@@ -245,27 +246,6 @@ footer p { font-size: 14px; margin-bottom: 8px; }
        <a href="#gioithieu">GIỚI THIỆU ▾</a>
        <div class="dropdown">
          <a href="#lichsu">Lịch sử hình thành</a>
-         <!-- BẮT ĐẦU PHẦN LỊCH SỬ HÌNH THÀNH -->
-<section class="section" id="lichsu">
- <div class="heading">
-  <span>NGUỒN CỘI ĐẠI NGÀN</span>
-  <h2>LỊCH SỬ HÌNH THÀNH</h2>
-  <p>Dấu chân khai mở đất đai và ngọn lửa văn hóa lưu truyền qua ngàn thế hệ.</p>
- </div>
- 
- <div class="intro-grid" style="grid-template-columns: 1fr 1.1fr;"> <!-- Đảo ngược vị trí ảnh và chữ cho sinh động -->
-  <div class="intro-text">
-   <h3>Dấu chân từ thuở hồng hoang</h3>
-   <p>Người H'rê (còn gọi là người Chăm Rê, Chom, Thượng Ba Tơ...) là một trong những cư dân bản địa sinh sống lâu đời bậc nhất tại dải đất miền Trung, thuộc nhóm ngôn ngữ Môn - Khmer. Từ thuở sơ khai, tổ tiên người H'rê đã men theo những con suối, ngọn đồi để định cư chủ yếu tại vùng núi phía Tây tỉnh Quảng Ngãi (như Ba Tơ, Sơn Hà, Minh Long) và Bình Định.</p>
-   
-   <p>Khác với nhiều dân tộc anh em ven dãy Trường Sơn chủ yếu làm nương rẫy, người H'rê từ rất sớm đã chinh phục thiên nhiên, khai khẩn các thung lũng hẹp để lập nên những thửa <strong>ruộng bậc thang</strong> tuyệt đẹp. Nền văn minh lúa nước đã giúp đồng bào xây dựng những bản làng trù phú, quây quần.</p>
-   
-   <p>Trải qua bao thăng trầm, ngọn lửa trong gian bếp nhà sàn của người H'rê chưa bao giờ tắt. Ngọn lửa ấy vẫn ngày đêm sưởi ấm và trao truyền một kho tàng di sản đồ sộ: tiếng chiêng ngân vang vách núi, làn điệu Ta-lêu mượt mà và kỹ thuật dệt thổ cẩm tinh xảo mang đậm màu của đất và lửa.</p>
-  </div>
-  <div class="intro-image" style="background-image: url('https://images.unsplash.com/photo-1596422846543-74c6ca27bb13?auto=format&fit=crop&w=1000&q=85'); box-shadow: 15px 15px 0px var(--wood);"></div>
- </div>
-</section>
-<!-- KẾT THÚC PHẦN LỊCH SỬ HÌNH THÀNH -->
          <a href="#dancu">Dân cư & Phân bố</a>
          <a href="#bando">Bản đồ không gian</a>
        </div>
@@ -319,6 +299,28 @@ footer p { font-size: 14px; margin-bottom: 8px; }
  </div>
 </section>
 
+<!-- BÀI VIẾT LỊCH SỬ ĐƯỢC ĐẶT VÀO ĐÚNG CHUẨN Ở ĐÂY -->
+<section class="section" id="lichsu" style="padding-top: 0;">
+ <div class="heading">
+  <span>NGUỒN CỘI ĐẠI NGÀN</span>
+  <h2>LỊCH SỬ HÌNH THÀNH</h2>
+  <p>Dấu chân khai mở đất đai và ngọn lửa văn hóa lưu truyền qua ngàn thế hệ.</p>
+ </div>
+ 
+ <div class="intro-grid" style="grid-template-columns: 1fr 1.1fr;"> 
+  <div class="intro-text">
+   <h3>Dấu chân từ thuở hồng hoang</h3>
+   <p>Người H'rê (còn gọi là người Chăm Rê, Chom, Thượng Ba Tơ...) là một trong những cư dân bản địa sinh sống lâu đời bậc nhất tại dải đất miền Trung, thuộc nhóm ngôn ngữ Môn - Khmer. Từ thuở sơ khai, tổ tiên người H'rê đã men theo những con suối, ngọn đồi để định cư chủ yếu tại vùng núi phía Tây tỉnh Quảng Ngãi (như Ba Tơ, Sơn Hà, Minh Long) và Bình Định.</p>
+   
+   <p>Khác với nhiều dân tộc anh em ven dãy Trường Sơn chủ yếu làm nương rẫy, người H'rê từ rất sớm đã chinh phục thiên nhiên, khai khẩn các thung lũng hẹp để lập nên những thửa <strong>ruộng bậc thang</strong> tuyệt đẹp. Nền văn minh lúa nước đã giúp đồng bào xây dựng những bản làng trù phú, quây quần.</p>
+   
+   <p>Trải qua bao thăng trầm, ngọn lửa trong gian bếp nhà sàn của người H'rê chưa bao giờ tắt. Ngọn lửa ấy vẫn ngày đêm sưởi ấm và trao truyền một kho tàng di sản đồ sộ: tiếng chiêng ngân vang vách núi, làn điệu Ta-lêu mượt mà và kỹ thuật dệt thổ cẩm tinh xảo mang đậm màu của đất và lửa.</p>
+  </div>
+  <div class="intro-image" style="background-image: url('https://images.unsplash.com/photo-1596422846543-74c6ca27bb13?auto=format&fit=crop&w=1000&q=85'); box-shadow: 15px 15px 0px #fed7aa;"></div>
+ </div>
+</section>
+<!-- KẾT THÚC BÀI VIẾT LỊCH SỬ -->
+
 <section class="section bg-warm" id="vanhoa">
  <div class="heading">
   <span>KHÁM PHÁ BẢN SẮC</span>
@@ -332,7 +334,7 @@ footer p { font-size: 14px; margin-bottom: 8px; }
    <div class="card-body">
      <h3>Trang phục thổ cẩm</h3>
      <p>Sự giao hòa giữa màu đen của đất, màu đỏ của lửa dệt nên hoa văn truyền thống tinh xảo của đồng bào H'rê.</p>
-     <img src="trang-phuc.jfif" alt="Trang phục H'rê" style="border-radius: 5px; margin-top: 10px; border:none;" onerror="this.style.display='none'">
+     <img src="trang-phuc.jfif" alt="Trang phục H'rê" style="border-radius: 8px; margin-top: 15px; border:none; height: 120px;" onerror="this.style.display='none'">
      <a href="#thuvien" class="btn-link">TÌM HIỂU THÊM →</a>
    </div>
   </article>
@@ -343,7 +345,7 @@ footer p { font-size: 14px; margin-bottom: 8px; }
      <h3>Âm vang đại ngàn</h3>
      <p>Lắng đọng cùng tiếng chiêng, đàn Ka-lắc và làn điệu Ta-lêu, Ca-choi bên bếp lửa nhà sàn.</p>
      <div class="audio-player" style="margin-top: 15px;">
-       <p style="font-size: 13px; font-weight: bold; margin-bottom: 5px; color: var(--wood);">Giai điệu H'rê:</p>
+       <p style="font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--wood);">Giai điệu H'rê:</p>
        <audio controls style="width: 100%;">
          <source src="batoqueem.mp3" type="audio/mpeg">
          Trình duyệt không hỗ trợ thẻ audio.
