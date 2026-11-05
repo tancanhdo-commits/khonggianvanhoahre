@@ -227,7 +227,7 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
        <a href="#gioithieu">GIỚI THIỆU ▾</a>
        <div class="dropdown">
          <a href="#lichsu">Lịch sử hình thành</a>
-         <a href="#dancu" onclick="toggleDanCu(event)">Dân cư & Phân bố</a>
+         <a href="#" onclick="toggleDanCu(event)">Dân cư & Phân bố</a>
          <a href="#diadiem">Bản đồ không gian</a>
        </div>
      </li>
@@ -299,6 +299,35 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
   </div>
   <div class="intro-image" style="background-image: url('https://images.unsplash.com/photo-1596422846543-74c6ca27bb13?auto=format&fit=crop&w=1000&q=85'); box-shadow: 15px 15px 0px #fed7aa;"></div>
  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- BÀI VIẾT DÂN CƯ VÀ PHÂN BỐ (Mặc định ẩn) -->
+<!-- ========================================== -->
+<section class="section" id="dancu" style="padding-top: 40px; display: none;">
+  <div class="heading">
+    <span>CỘNG ĐỒNG H'RÊ TRÊN VÙNG ĐẤT TRƯỜNG SƠN</span>
+    <h2>DÂN CƯ VÀ PHÂN BỐ ĐỊA LÝ</h2>
+    <p>Sức sống mãnh liệt nơi rẻo cao miền Trung – Tây Nguyên</p>
+  </div>
+  
+  <div style="max-width: 900px; margin: auto; background: #ffffff; padding: 45px 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(156, 75, 34, 0.08); border-left: 6px solid var(--fire); border-right: 1px solid #f3e5db; border-top: 1px solid #f3e5db; border-bottom: 1px solid #f3e5db;">
+    <p style="font-size: 16.5px; margin-bottom: 20px; color: var(--text); line-height: 1.8; text-align: justify;">
+      <strong style="color: var(--earth);">Dân tộc H'rê</strong> là một trong những dân tộc thiểu số sinh sống lâu đời ở khu vực miền Trung Việt Nam, chủ yếu thuộc vùng núi phía Đông dãy Trường Sơn. Theo kết quả Tổng điều tra dân số và nhà ở năm 2019, dân tộc H'rê có tổng dân số 149.460 người.
+    </p>
+    <p style="font-size: 16.5px; margin-bottom: 20px; color: var(--text); line-height: 1.8; text-align: justify;">
+      Người H'rê phân bố tập trung đông nhất tại khu vực miền núi phía Tây tỉnh Quảng Ngãi, đặc biệt ở các địa bàn Sơn Hà, Ba Tơ và Minh Long (theo địa danh hành chính trước năm 2025). Ngoài ra, đồng bào còn sinh sống tại Sơn Tây, Trà Bồng, một số khu vực thuộc Nghĩa Hành, Tư Nghĩa và các địa bàn lân cận. Người H'rê cũng cư trú tại khu vực An Lão (Bình Định cũ, nay thuộc tỉnh Gia Lai) và một bộ phận sinh sống ở Kon Plông (Kon Tum cũ, nay thuộc tỉnh Quảng Ngãi).
+    </p>
+    <p style="font-size: 16.5px; margin-bottom: 20px; color: var(--text); line-height: 1.8; text-align: justify;">
+      Về điều kiện địa lý, cộng đồng H'rê chủ yếu cư trú ở vùng núi, thung lũng và các khu vực ven sông, suối thuộc sườn Đông dãy Trường Sơn. Một số địa bàn cư trú gắn với lưu vực sông Trà Khúc và sông Vệ. Đây là những khu vực có nguồn nước và đất đai thuận lợi cho hoạt động sản xuất nông nghiệp, đặc biệt là canh tác lúa nước.
+    </p>
+    <p style="font-size: 16.5px; color: var(--text); line-height: 1.8; text-align: justify;">
+      Trải qua nhiều thế hệ, người H'rê đã hình thành các cộng đồng làng truyền thống, gọi là <strong>plây</strong>, gắn bó với môi trường tự nhiên và có mối quan hệ cộng đồng chặt chẽ. Dù sinh sống ở nhiều địa bàn khác nhau, đồng bào vẫn gìn giữ tiếng nói, trang phục, phong tục tập quán và những giá trị văn hóa truyền thống đặc sắc, góp phần tạo nên bản sắc văn hóa phong phú của vùng đất miền Trung – Tây Nguyên.
+    </p>
+    <div style="text-align: center; margin-top: 30px;">
+       <button onclick="toggleDanCu(event)" style="padding: 10px 24px; background: var(--fire); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">Đóng bài viết</button>
+    </div>
+  </div>
 </section>
 
 <section class="section bg-warm" id="vanhoa">
@@ -380,44 +409,6 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
 </section>
 
 <!-- ========================================== -->
-<!-- BÀI VIẾT DÂN CƯ VÀ PHÂN BỐ (Mặc định ẩn) -->
-<!-- ========================================== -->
-<section class="section" id="dancu" style="padding-top: 40px; display: none;">
-  <div class="heading">
-    <span>CỘNG ĐỒNG H'RÊ TRÊN VÙNG ĐẤT TRƯỜNG SƠN</span>
-    <h2>DÂN CƯ VÀ PHÂN BỐ ĐỊA LÝ</h2>
-    <p>Sức sống mãnh liệt nơi rẻo cao miền Trung – Tây Nguyên</p>
-  </div>
-  
-  <div style="max-width: 900px; margin: auto; background: #ffffff; padding: 45px 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(156, 75, 34, 0.08); border-left: 6px solid var(--fire); border-right: 1px solid #f3e5db; border-top: 1px solid #f3e5db; border-bottom: 1px solid #f3e5db;">
-    
-    <p style="font-size: 16.5px; margin-bottom: 20px; color: var(--text); line-height: 1.8; text-align: justify;">
-      <strong style="color: var(--earth);">Dân tộc H'rê</strong> là một trong những dân tộc thiểu số sinh sống lâu đời ở khu vực miền Trung Việt Nam, chủ yếu thuộc vùng núi phía Đông dãy Trường Sơn. Theo kết quả Tổng điều tra dân số và nhà ở năm 2019, dân tộc H'rê có tổng dân số 149.460 người.
-    </p>
-    
-    <p style="font-size: 16.5px; margin-bottom: 20px; color: var(--text); line-height: 1.8; text-align: justify;">
-      Người H'rê phân bố tập trung đông nhất tại khu vực miền núi phía Tây tỉnh Quảng Ngãi, đặc biệt ở các địa bàn Sơn Hà, Ba Tơ và Minh Long (theo địa danh hành chính trước năm 2025). Ngoài ra, đồng bào còn sinh sống tại Sơn Tây, Trà Bồng, một số khu vực thuộc Nghĩa Hành, Tư Nghĩa và các địa bàn lân cận. Người H'rê cũng cư trú tại khu vực An Lão (Bình Định cũ, nay thuộc tỉnh Gia Lai) và một bộ phận sinh sống ở Kon Plông (Kon Tum cũ, nay thuộc tỉnh Quảng Ngãi).
-    </p>
-    
-    <p style="font-size: 16.5px; margin-bottom: 20px; color: var(--text); line-height: 1.8; text-align: justify;">
-      Về điều kiện địa lý, cộng đồng H'rê chủ yếu cư trú ở vùng núi, thung lũng và các khu vực ven sông, suối thuộc sườn Đông dãy Trường Sơn. Một số địa bàn cư trú gắn với lưu vực sông Trà Khúc và sông Vệ. Đây là những khu vực có nguồn nước và đất đai thuận lợi cho hoạt động sản xuất nông nghiệp, đặc biệt là canh tác lúa nước.
-    </p>
-    
-    <p style="font-size: 16.5px; color: var(--text); line-height: 1.8; text-align: justify;">
-      Trải qua nhiều thế hệ, người H'rê đã hình thành các cộng đồng làng truyền thống, gọi là <strong>plây</strong>, gắn bó với môi trường tự nhiên và có mối quan hệ cộng đồng chặt chẽ. Dù sinh sống ở nhiều địa bàn khác nhau, đồng bào vẫn gìn giữ tiếng nói, trang phục, phong tục tập quán và những giá trị văn hóa truyền thống đặc sắc, góp phần tạo nên bản sắc văn hóa phong phú của vùng đất miền Trung – Tây Nguyên.
-    </p>
-    
-    <div style="text-align: center; margin-top: 30px;">
-       <button onclick="toggleDanCu(event)" style="padding: 10px 24px; background: var(--fire); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">Đóng bài viết</button>
-    </div>
-    
-  </div>
-</section>
-<!-- ========================================== -->
-<!-- KẾT THÚC BÀI VIẾT DÂN CƯ VÀ PHÂN BỐ -->
-<!-- ========================================== -->
-
-<!-- ========================================== -->
 <!-- BÀI VIẾT TRIẾT LÝ ẨM THỰC (Mặc định ẩn) -->
 <!-- ========================================== -->
 <section class="section" id="trietly" style="padding-top: 40px; display: none;">
@@ -442,7 +433,11 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
     </div>
   </div>
 </section>
-  <section class="section" id="thucuong" style="padding-top: 40px; display: none;">
+
+<!-- ========================================== -->
+<!-- BÀI VIẾT THỨC UỐNG TRUYỀN THỐNG (Mặc định ẩn) -->
+<!-- ========================================== -->
+<section class="section" id="thucuong" style="padding-top: 40px; display: none;">
   <div class="heading">
     <span>HƯƠNG MÊ SAY TỪ ĐẠI NGÀN</span>
     <h2>RƯỢU CẦN & VĂN HÓA RƯỢU CHÉ</h2>
@@ -450,7 +445,6 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
   </div>
   
   <div style="max-width: 900px; margin: auto; background: #ffffff; padding: 45px 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(156, 75, 34, 0.08); border-left: 6px solid var(--fire); border-right: 1px solid #f3e5db; border-top: 1px solid #f3e5db; border-bottom: 1px solid #f3e5db;">
-    
     <h3 style="color: var(--earth); margin-bottom: 12px; font-size: 20px;">Tinh hoa từ những nguyên liệu ban sơ</h3>
     <p style="font-size: 16.5px; margin-bottom: 25px; color: var(--text); line-height: 1.8; text-align: justify;">
       Rượu cần (hay rượu ché) của người H'rê được ủ từ những sản vật tinh túy nhất của nương rẫy: lúa tẻ, gạo nếp nương, hạt bo bo hoặc củ sắn. Linh hồn của ché rượu nằm ở loại <strong>men lá đặc biệt</strong>, được đồng bào chế tác kỳ công từ vỏ cây, rễ cây rừng, gừng, ớt và gạo thơm. Tất cả được ủ kín trong những chiếc ché (chóe) đất nung, bịt miệng bằng lá chuối khô qua nhiều tháng ngày để lên men tự nhiên. Khi uống, chỉ cần châm thêm dòng nước suối trong vắt đầu nguồn là hương thơm của nếp nương và men rừng đã tỏa ngát không gian.
@@ -468,7 +462,6 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
     <div style="text-align: center; margin-top: 30px;">
        <button onclick="toggleThucUong(event)" style="padding: 10px 24px; background: var(--fire); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">Đóng bài viết</button>
     </div>
-    
   </div>
 </section>
 
@@ -488,9 +481,9 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
   <img src="cauca.jpg" alt="Câu cá" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'">
   <img src="hoanghonbatrang.jpg" alt="Hoàng hôn" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
   <img src="naubanhtet.jpg" alt="Nấu bánh Tết" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'">
-  <img src="cohuong.jpg" alt="Cô gái H'rê">
-  <img src="cohuongnaubanh.jpg" alt="Cô gái H'rê bên nồi Bánh Tết">
-  <img src="trangphuchre.jpg" alt="Sơn nữ">
+  <img src="cohuong.jpg" alt="Cô gái H'rê" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
+  <img src="cohuongnaubanh.jpg" alt="Cô gái H'rê bên nồi Bánh Tết" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'">
+  <img src="trangphuchre.jpg" alt="Sơn nữ" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
  </div>
  <div class="callout">
   <h3>Chung tay góp củi giữ lửa di sản H'rê</h3>
@@ -562,7 +555,7 @@ function toggleMenu(event) {
 
 // 3. Ẩn/Hiện bài viết Triết lý ẩm thực
 function toggleTrietLy(event) {
-  if(event) event.preventDefault(); // Ngăn trình duyệt tải lại trang khi bấm nút
+  if(event) event.preventDefault(); 
   
   var section = document.getElementById("trietly");
   if (section.style.display === "none" || section.style.display === "") {
@@ -586,7 +579,20 @@ function toggleDanCu(event) {
   }
 }
 
-// 5. Đồng hồ thời gian thực
+// 5. Ẩn/Hiện bài viết Thức uống truyền thống
+function toggleThucUong(event) {
+  if(event) event.preventDefault(); 
+  
+  var section = document.getElementById("thucuong");
+  if (section.style.display === "none" || section.style.display === "") {
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+  } else {
+    section.style.display = "none";
+  }
+}
+
+// 6. Đồng hồ thời gian thực
 function updateClock() {
     const now = new Date();
     const timeStr = now.toLocaleTimeString('vi-VN', { hour12: false });
@@ -601,15 +607,3 @@ updateClock();
 </script>
 </body>
 </html>
-// Ẩn/Hiện bài viết Thức uống truyền thống
-function toggleThucUong(event) {
-  if(event) event.preventDefault(); 
-  
-  var section = document.getElementById("thucuong");
-  if (section.style.display === "none" || section.style.display === "") {
-    section.style.display = "block";
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
-  } else {
-    section.style.display = "none";
-  }
-}
