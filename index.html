@@ -227,7 +227,7 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
        <a href="#gioithieu">GIỚI THIỆU ▾</a>
        <div class="dropdown">
          <a href="#lichsu">Lịch sử hình thành</a>
-         <a href="#dancu">Dân cư & Phân bố</a>
+         <a href="#dancu" onclick="toggleDanCu(event)">Dân cư & Phân bố</a>
          <a href="#diadiem">Bản đồ không gian</a>
        </div>
      </li>
@@ -248,7 +248,6 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
          <a href="#congchieng">Nghệ thuật cồng chiêng</a>
        </div>
      </li>
-     <!-- ĐÃ XÓA MỤC ẨM THỰC DƯ THỪA - CHỈ GIỮ LẠI MỤC CÓ DROPDOWN BÊN DƯỚI -->
      <li>
        <a href="#amthuc">ẨM THỰC ▾</a>
        <div class="dropdown">
@@ -379,6 +378,7 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
   </article>
  </div>
 </section>
+
 <!-- ========================================== -->
 <!-- BÀI VIẾT DÂN CƯ VÀ PHÂN BỐ (Mặc định ẩn) -->
 <!-- ========================================== -->
@@ -417,11 +417,6 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
 <!-- KẾT THÚC BÀI VIẾT DÂN CƯ VÀ PHÂN BỐ -->
 <!-- ========================================== -->
 
-<!-- ========================================== -->
-<!-- BÀI VIẾT TRIẾT LÝ ẨM THỰC (Mặc định ẩn) -->
-<!-- ========================================== -->
-<section class="section" id="trietly" style="padding-top: 40px; display: none;">
-...
 <!-- ========================================== -->
 <!-- BÀI VIẾT TRIẾT LÝ ẨM THỰC (Mặc định ẩn) -->
 <!-- ========================================== -->
@@ -546,7 +541,20 @@ function toggleTrietLy(event) {
   }
 }
 
-// 4. Đồng hồ thời gian thực
+// 4. Ẩn/Hiện bài viết Dân cư
+function toggleDanCu(event) {
+  if(event) event.preventDefault();
+  
+  var section = document.getElementById("dancu");
+  if (section.style.display === "none" || section.style.display === "") {
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+  } else {
+    section.style.display = "none";
+  }
+}
+
+// 5. Đồng hồ thời gian thực
 function updateClock() {
     const now = new Date();
     const timeStr = now.toLocaleTimeString('vi-VN', { hour12: false });
