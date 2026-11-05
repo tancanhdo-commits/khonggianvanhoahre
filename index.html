@@ -601,3 +601,15 @@ updateClock();
 </script>
 </body>
 </html>
+// Ẩn/Hiện bài viết Thức uống truyền thống
+function toggleThucUong(event) {
+  if(event) event.preventDefault(); 
+  
+  var section = document.getElementById("thucuong");
+  if (section.style.display === "none" || section.style.display === "") {
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+  } else {
+    section.style.display = "none";
+  }
+}
