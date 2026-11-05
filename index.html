@@ -162,7 +162,7 @@ audio { max-width: 100%; border-radius: 8px; height: 35px; outline: none; }
 .visitor-counter { margin-top: 25px; }
 .visitor-counter p { margin-bottom: 8px; font-size: 15px; color: #fbd38d; display: flex; align-items: center; }
 .visitor-counter .digit {
-  background: #f44336; /* Màu đỏ cam giống hình tham khảo */
+  background: #f44336; 
   color: white; font-weight: bold; font-family: 'Courier New', Courier, monospace;
   padding: 3px 6px; margin: 0 2px;
   border-radius: 4px; font-size: 17px;
@@ -248,50 +248,10 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
          <a href="#congchieng">Nghệ thuật cồng chiêng</a>
        </div>
      </li>
-     <li><a href="#amthuc">ẨM THỰC</a></li>
      <li>
        <a href="#amthuc">ẨM THỰC ▾</a>
        <div class="dropdown">
-         <a href="#trietly">1. Triết lý ẩm thực</a>
-         <section class="section" id="trietly" style="padding-top: 40px;">
-  <div class="heading">
-   <!-- BÀI VIẾT TRIẾT LÝ ẨM THỰC (Mặc định ẩn) -->
-<section class="section" id="trietly" style="padding-top: 40px; display: none;">
-  <div class="heading">
-    <span>LINH HỒN CỦA BẾP LỬA</span>
-    <h2>TRIẾT LÝ ẨM THỰC H'RÊ</h2>
-    <p>Hơi thở đại ngàn trong từng hương vị</p>
-  </div>
-  
-  <div style="max-width: 900px; margin: auto; background: #ffffff; padding: 45px 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(156, 75, 34, 0.08); border-left: 6px solid var(--fire); border-right: 1px solid #f3e5db; border-top: 1px solid #f3e5db; border-bottom: 1px solid #f3e5db;">
-    <p style="font-size: 16.5px; margin-bottom: 20px; color: var(--text); line-height: 1.8; text-align: justify;">
-      Mâm cơm của người H'rê không bắt đầu từ những khu chợ sầm uất, mà cội nguồn của nó nằm ở triền rẫy, khe suối và những cánh rừng già...
-    </p>
-    <!-- Thêm nút để đóng bài viết nếu muốn -->
-    <div style="text-align: center; margin-top: 20px;">
-       <button onclick="toggleTrietLy(event)" style="padding: 10px 20px; background: var(--fire); color: white; border: none; border-radius: 5px; cursor: pointer;">Đóng lại</button>
-    </div>
-  </div>
-</section>
-
-<!-- SCRIPT ĐIỀU KHIỂN -->
-<script>
-function toggleTrietLy(event) {
-  if(event) event.preventDefault(); // Ngăn chặn nhảy trang mặc định của thẻ <a>
-  
-  var section = document.getElementById("trietly");
-  if (section.style.display === "none" || section.style.display === "") {
-    section.style.display = "block";
-    // Cuộn trang mượt mà đến phần bài viết vừa mở
-    section.scrollIntoView({ behavior: 'smooth' }); 
-  } else {
-    section.style.display = "none";
-  }
-}
-</script>
-</section>
-<!-- ========================================== -->
-<!-- KẾT THÚC BÀI VIẾT: TRIẾT LÝ ẨM THỰC -->
+         <a href="#" onclick="toggleTrietLy(event)">1. Triết lý ẩm thực</a>
          <a href="#monantruyenthong">2. Các món ăn truyền thống</a>
          <a href="#thucuong">3. Thức uống truyền thống</a>
        </div>
@@ -419,6 +379,32 @@ function toggleTrietLy(event) {
  </div>
 </section>
 
+<!-- ========================================== -->
+<!-- BÀI VIẾT TRIẾT LÝ ẨM THỰC (Mặc định ẩn) -->
+<!-- ========================================== -->
+<section class="section" id="trietly" style="padding-top: 40px; display: none;">
+  <div class="heading">
+    <span>LINH HỒN CỦA BẾP LỬA</span>
+    <h2>TRIẾT LÝ ẨM THỰC H'RÊ</h2>
+    <p>Hơi thở đại ngàn trong từng hương vị</p>
+  </div>
+  
+  <div style="max-width: 900px; margin: auto; background: #ffffff; padding: 45px 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(156, 75, 34, 0.08); border-left: 6px solid var(--fire); border-right: 1px solid #f3e5db; border-top: 1px solid #f3e5db; border-bottom: 1px solid #f3e5db;">
+    <p style="font-size: 16.5px; margin-bottom: 20px; color: var(--text); line-height: 1.8; text-align: justify;">
+      Mâm cơm của người H'rê không bắt đầu từ những khu chợ sầm uất, mà cội nguồn của nó nằm ở triền rẫy, khe suối và những cánh rừng già. Ẩm thực nơi đây mang trong mình triết lý của sự nguyên bản và mộc mạc. Mỗi mớ rau dớn cắn vội giọt sương, búp măng le đầu mùa hay con cá niên vừa bắt lên từ suối đá đều là món quà thuần khiết mà mẹ thiên nhiên hào phóng ban tặng.
+    </p>
+    <p style="font-size: 16.5px; margin-bottom: 20px; color: var(--text); line-height: 1.8; text-align: justify;">
+      Không cầu kỳ tẩm ướp, chẳng phô trương hương liệu, người H'rê chuộng cách chế biến mộc mạc nhất như nướng ống tre, luộc, hay vùi trong tro nóng. Mượn vị thanh mát của nước suối, mùi ngai ngái của ống nứa tươi và hơi ấm rực rỡ của than hồng để làm chín thức ăn, người H'rê đã tạo nên một sự hòa quyện tuyệt đẹp giữa con người và vạn vật. Họ nương tựa vào rừng già, lấy đi sự sống nhưng luôn biết chừng mực và nâng niu trọn vẹn tinh túy ban sơ.
+    </p>
+    <p style="font-size: 16.5px; color: var(--text); line-height: 1.8; text-align: justify;">
+      <strong style="color: var(--earth);">Ngồi quây quần bên bếp lửa bập bùng, nhấm nháp miếng thịt gác bếp dai ngọt cùng chóe rượu cần thơm hương men lá, ta mới hiểu hết cái hồn của người H'rê.</strong> Giản dị, chân chất nhưng lại đậm đà và nồng ấm vô cùng — ẩm thực nơi đây chính là tấm gương phản chiếu tâm hồn ngay thẳng, hiền hòa và tình yêu thiên nhiên mãnh liệt của những người con đại ngàn.
+    </p>
+    <div style="text-align: center; margin-top: 30px;">
+       <button onclick="toggleTrietLy(event)" style="padding: 10px 24px; background: var(--fire); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">Đóng bài viết</button>
+    </div>
+  </div>
+</section>
+
 <section class="quote" id="lehoi">
  <h2>GIỮ LỬA BẢN SẮC - THẮP SÁNG TƯƠNG LAI</h2>
  <p>Văn hóa tựa như ngọn lửa thiêng giữa trung tâm nhà sàn. Chỉ cần cộng đồng còn trân trọng, còn trao truyền, thì hơi ấm của tiếng chiêng, của màu thổ cẩm sẽ mãi trường tồn cùng thời gian.</p>
@@ -436,8 +422,6 @@ function toggleTrietLy(event) {
   <img src="hoanghonbatrang.jpg" alt="Hoàng hôn" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
   <img src="naubanhtet.jpg" alt="Nấu bánh Tết" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'">
  </div>
- </div>
- </div>
  <div class="callout">
   <h3>Chung tay góp củi giữ lửa di sản H'rê</h3>
   <p>Kính mời các nghệ nhân, thế hệ trẻ và những người yêu văn hóa cùng chung tay đóng góp câu chuyện, tư liệu, hình ảnh để kho tàng di sản H'rê ngày càng thêm rực rỡ.</p>
@@ -453,12 +437,10 @@ function toggleTrietLy(event) {
     <h2>ĐẾN VỚI KHÔNG GIAN VĂN HÓA</h2>
     <p>Trường PTDTBT TH& THCS Ba Trang, Quảng Ngãi</p>
   </div>
-  <!-- Khung Bản đồ được bo góc tương tự hình mẫu -->
   <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(156, 75, 34, 0.15); border: 1px solid #f3e5db;">
     <iframe src="https://maps.google.com/maps?q=Trường+PTDTBT+TH+và+THCS+Ba+Trang,+Quảng+Ngãi&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
 </section>
-<!-- KẾT THÚC BẢN ĐỒ -->
 
 <footer>
  <div class="footer-inner">
@@ -471,9 +453,6 @@ function toggleTrietLy(event) {
    <p>Nền tảng lưu giữ tư liệu văn hóa bản địa.</p>
    <p>Địa điểm: Trường PTDTBT TH& THCS Ba Trang, Quảng Ngãi.</p>
    
-   <!-- ========================================== -->
-   <!-- BỘ ĐẾM LƯỢT TRUY CẬP VÀ THỜI GIAN THỰC -->
-   <!-- ========================================== -->
    <div class="visitor-counter">
      <p>Lượt truy cập:
         <span class="digit">3</span>
@@ -486,14 +465,16 @@ function toggleTrietLy(event) {
      </p>
      <p id="live-time">Thời gian: --:--:-- - --/--/----</p>
    </div>
-   <!-- KẾT THÚC BỘ ĐẾM -->
   </div>
  </div>
  <div class="copyright">© 2026 - KHÔNG GIAN VĂN HÓA CỘNG ĐỒNG H'RÊ | Cùng giữ ngọn lửa văn hóa dân tộc.</div>
 </footer>
 
+<!-- ========================================== -->
+<!-- JAVASCRIPT ĐIỀU KHIỂN -->
+<!-- ========================================== -->
 <script>
-// Đóng menu mobile khi click 
+// 1. Đóng menu mobile khi click 
 document.querySelectorAll('nav > ul > li > a').forEach(link => {
  link.addEventListener('click', (e) => {
   if(window.innerWidth <= 850 && !link.textContent.includes('▾')) {
@@ -502,23 +483,31 @@ document.querySelectorAll('nav > ul > li > a').forEach(link => {
  });
 });
 
-// Bật/tắt nhánh con (Dropdown)
+// 2. Bật/tắt nhánh con trong thẻ bài (Dropdown)
 function toggleMenu(event) {
   event.preventDefault(); 
   var menu = document.getElementById("nhanhCon");
   menu.classList.toggle("hien-thi");
 }
 
-// ==========================================
-// CODE CHẠY ĐỒNG HỒ THỜI GIAN THỰC CHO BỘ ĐẾM
-// ==========================================
+// 3. Ẩn/Hiện bài viết Triết lý ẩm thực
+function toggleTrietLy(event) {
+  if(event) event.preventDefault(); // Ngăn trình duyệt tải lại trang khi bấm nút
+  
+  var section = document.getElementById("trietly");
+  if (section.style.display === "none" || section.style.display === "") {
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+  } else {
+    section.style.display = "none";
+  }
+}
+
+// 4. Đồng hồ thời gian thực
 function updateClock() {
     const now = new Date();
-    // Lấy thời gian (Giờ:Phút:Giây)
     const timeStr = now.toLocaleTimeString('vi-VN', { hour12: false });
-    // Lấy ngày tháng năm
     const dateStr = now.toLocaleDateString('vi-VN');
-    // Hiển thị ra màn hình
     const timeEl = document.getElementById('live-time');
     if(timeEl) {
         timeEl.innerHTML = `Thời gian: <strong>${timeStr} - ${dateStr}</strong>`;
