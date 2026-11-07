@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Không gian văn hóa cộng đồng H'rê - Lưu giữ, bảo tồn và lan tỏa bản sắc văn hóa dân tộc H'rê.">
 <title>Không gian văn hóa cộng đồng H'rê - Âm vang đại ngàn</title>
+
+<!-- Nhúng CSS thư viện GLightbox để zoom ảnh -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
 <style>
 :root {
   /* BẢNG MÀU LÀNG QUÊ SÁNG (LIGHT THEME) */
@@ -151,10 +155,34 @@ audio { max-width: 100%; border-radius: 8px; height: 35px; outline: none; }
 .quote h2 { font-size: 34px; color: #fed7aa; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
 .quote p { max-width: 800px; margin: auto; font-size: 19px; color: #ffedd5; line-height: 1.8; }
 
-/* THƯ VIỆN */
-.library { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.library img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; cursor: pointer; }
-.library img:hover { transform: scale(1.03); box-shadow: 0 10px 25px rgba(234, 88, 12, 0.2); }
+/* THƯ VIỆN - Đã cập nhật CSS Grid */
+.library {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.gallery-item {
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  position: relative;
+  transition: 0.3s;
+}
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover {
+  box-shadow: 0 10px 25px rgba(234, 88, 12, 0.2);
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
 .callout { background: #ffedd5; border-left: 6px solid var(--fire); padding: 35px; border-radius: 8px; margin-top: 50px; }
 .callout h3 { color: var(--earth); margin-bottom: 10px; font-size: 22px; }
 
@@ -200,14 +228,15 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
   .intro-grid { grid-template-columns: 1fr; gap: 40px; }
   .intro-image { min-height: 280px; box-shadow: none; }
   .cards { grid-template-columns: repeat(2, 1fr); }
-  .library { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .library { grid-template-columns: repeat(2, 1fr); gap: 15px; }
 }
 @media(max-width: 550px) {
   .cards { grid-template-columns: 1fr; }
   .hero { min-height: 480px; }
   .section { padding: 60px 18px; }
   .heading h2 { font-size: 28px; }
-  .library img { height: 160px; }
+  .library { grid-template-columns: 1fr; gap: 15px; }
+  .gallery-item img { height: 250px; }
 }
 </style>
 </head>
@@ -477,19 +506,43 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
   <p>Lưu giữ vẻ đẹp thiên nhiên, con người và những khoảnh khắc đời sống văn hóa đồng bào H'rê.</p>
  </div>
  <div class="library">
-<img src="sonnu.jpg" alt="Các cô sơn nữ" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
-<img src="cauca.jpg" alt="Câu cá" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'">
-<img src="hoanghonbatrang.jpg" alt="Hoàng hôn" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
-<img src="naubanhtet.jpg" alt="Nấu bánh Tết" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'">
-<img src="cohuong.jpg" alt="Cô gái H'rê" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
-<img src="cohuongnaubanh.jpg" alt="Cô gái H'rê bên nồi Bánh Tết" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'">
-<img src="trangphuchre.jpg" alt="Sơn nữ" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
-<img src="coyen2.jpg" alt="Sơn nữ H'rê">
-<img src="coyen3.jpg" alt="Sơn nữ H'rê">
-<img src="coyenlop1.jpg" alt="Cô giáo H'rê">
-<img src="tapthecogiao.jpg" alt="Tập thể cô giáo H'rê">
-<img src="cogiaoyen.jpg" alt="Cô giáo H'rê">
-</div>
+  <a href="sonnu.jpg" class="glightbox gallery-item" data-title="Các cô sơn nữ">
+    <img src="sonnu.jpg" alt="Các cô sơn nữ" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
+  </a>
+  <a href="cauca.jpg" class="glightbox gallery-item" data-title="Câu cá">
+    <img src="cauca.jpg" alt="Câu cá" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'">
+  </a>
+  <a href="hoanghonbatrang.jpg" class="glightbox gallery-item" data-title="Hoàng hôn">
+    <img src="hoanghonbatrang.jpg" alt="Hoàng hôn" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
+  </a>
+  <a href="naubanhtet.jpg" class="glightbox gallery-item" data-title="Nấu bánh Tết">
+    <img src="naubanhtet.jpg" alt="Nấu bánh Tết" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'">
+  </a>
+  <a href="cohuong.jpg" class="glightbox gallery-item" data-title="Cô gái H'rê">
+    <img src="cohuong.jpg" alt="Cô gái H'rê" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
+  </a>
+  <a href="cohuongnaubanh.jpg" class="glightbox gallery-item" data-title="Cô gái H'rê bên nồi Bánh Tết">
+    <img src="cohuongnaubanh.jpg" alt="Cô gái H'rê bên nồi Bánh Tết" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80'">
+  </a>
+  <a href="trangphuchre.jpg" class="glightbox gallery-item" data-title="Sơn nữ">
+    <img src="trangphuchre.jpg" alt="Sơn nữ" onerror="this.src='https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80'">
+  </a>
+  <a href="coyen2.jpg" class="glightbox gallery-item" data-title="Sơn nữ H'rê">
+    <img src="coyen2.jpg" alt="Sơn nữ H'rê">
+  </a>
+  <a href="coyen3.jpg" class="glightbox gallery-item" data-title="Sơn nữ H'rê">
+    <img src="coyen3.jpg" alt="Sơn nữ H'rê">
+  </a>
+  <a href="coyenlop1.jpg" class="glightbox gallery-item" data-title="Cô giáo H'rê">
+    <img src="coyenlop1.jpg" alt="Cô giáo H'rê">
+  </a>
+  <a href="tapthecogiao.jpg" class="glightbox gallery-item" data-title="Tập thể cô giáo H'rê">
+    <img src="tapthecogiao.jpg" alt="Tập thể cô giáo H'rê">
+  </a>
+  <a href="cogiaoyen.jpg" class="glightbox gallery-item" data-title="Cô giáo H'rê">
+    <img src="cogiaoyen.jpg" alt="Cô giáo H'rê">
+  </a>
+ </div>
  <div class="callout">
   <h3>Chung tay góp củi giữ lửa di sản H'rê</h3>
   <p>Kính mời các nghệ nhân, thế hệ trẻ và những người yêu văn hóa cùng chung tay đóng góp câu chuyện, tư liệu, hình ảnh để kho tàng di sản H'rê ngày càng thêm rực rỡ.</p>
@@ -541,8 +594,17 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
 <!-- ========================================== -->
 <!-- JAVASCRIPT ĐIỀU KHIỂN -->
 <!-- ========================================== -->
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-// 1. Đóng menu mobile khi click 
+// 1. Khởi tạo GLightbox
+const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    zoomable: true
+});
+
+// 2. Đóng menu mobile khi click 
 document.querySelectorAll('nav > ul > li > a').forEach(link => {
  link.addEventListener('click', (e) => {
   if(window.innerWidth <= 850 && !link.textContent.includes('▾')) {
@@ -551,14 +613,14 @@ document.querySelectorAll('nav > ul > li > a').forEach(link => {
  });
 });
 
-// 2. Bật/tắt nhánh con trong thẻ bài (Dropdown)
+// 3. Bật/tắt nhánh con trong thẻ bài (Dropdown)
 function toggleMenu(event) {
   event.preventDefault(); 
   var menu = document.getElementById("nhanhCon");
   menu.classList.toggle("hien-thi");
 }
 
-// 3. Ẩn/Hiện bài viết Triết lý ẩm thực
+// 4. Ẩn/Hiện bài viết Triết lý ẩm thực
 function toggleTrietLy(event) {
   if(event) event.preventDefault(); 
   
@@ -571,7 +633,7 @@ function toggleTrietLy(event) {
   }
 }
 
-// 4. Ẩn/Hiện bài viết Dân cư
+// 5. Ẩn/Hiện bài viết Dân cư
 function toggleDanCu(event) {
   if(event) event.preventDefault();
   
@@ -584,7 +646,7 @@ function toggleDanCu(event) {
   }
 }
 
-// 5. Ẩn/Hiện bài viết Thức uống truyền thống
+// 6. Ẩn/Hiện bài viết Thức uống truyền thống
 function toggleThucUong(event) {
   if(event) event.preventDefault(); 
   
@@ -597,7 +659,7 @@ function toggleThucUong(event) {
   }
 }
 
-// 6. Đồng hồ thời gian thực
+// 7. Đồng hồ thời gian thực
 function updateClock() {
     const now = new Date();
     const timeStr = now.toLocaleTimeString('vi-VN', { hour12: false });
