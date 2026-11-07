@@ -155,7 +155,7 @@ audio { max-width: 100%; border-radius: 8px; height: 35px; outline: none; }
 .quote h2 { font-size: 34px; color: #fed7aa; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
 .quote p { max-width: 800px; margin: auto; font-size: 19px; color: #ffedd5; line-height: 1.8; }
 
-/* THƯ VIỆN - Đã cập nhật CSS Grid */
+/* THƯ VIỆN */
 .library {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -281,7 +281,7 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
        <a href="#amthuc">ẨM THỰC ▾</a>
        <div class="dropdown">
          <a href="#" onclick="toggleTrietLy(event)">1. Triết lý ẩm thực</a>
-         <a href="#monantruyenthong">2. Các món ăn truyền thống</a>
+         <a href="#" onclick="toggleMonAn(event)">2. Các món ăn truyền thống</a>
          <a href="#" onclick="toggleThucUong(event)">3. Thức uống truyền thống</a>
        </div>
      </li>
@@ -459,6 +459,39 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
     </p>
     <div style="text-align: center; margin-top: 30px;">
        <button onclick="toggleTrietLy(event)" style="padding: 10px 24px; background: var(--fire); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">Đóng bài viết</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- BÀI VIẾT CÁC MÓN ĂN TRUYỀN THỐNG (Mới thêm) -->
+<!-- ========================================== -->
+<section class="section" id="monan" style="padding-top: 40px; display: none;">
+  <div class="heading">
+    <span>HƯƠNG VỊ NÚI RỪNG</span>
+    <h2>CÁC MÓN ĂN TRUYỀN THỐNG</h2>
+    <p>Đậm đà bản sắc ẩm thực của đồng bào H'rê</p>
+  </div>
+  
+  <div style="max-width: 900px; margin: auto; background: #ffffff; padding: 45px 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(156, 75, 34, 0.08); border-left: 6px solid var(--fire); border-right: 1px solid #f3e5db; border-top: 1px solid #f3e5db; border-bottom: 1px solid #f3e5db;">
+    
+    <h3 style="color: var(--earth); margin-bottom: 12px; font-size: 20px;">1. Canh rau ranh, ốc đá</h3>
+    <p style="font-size: 16.5px; margin-bottom: 25px; color: var(--text); line-height: 1.8; text-align: justify;">
+      Rau ranh và ốc đá là sự kết hợp hoàn hảo từ thiên nhiên ban tặng cho vùng cao. Rau ranh mọc hoang dã trên các triền đồi, phiến lá non nớt mang vị ngọt nhẩn đắng đặc trưng. Ốc đá bắt từ những khe suối trong vắt, thịt béo và giòn sần sật. Khi nấu canh chung, món ăn có vị thanh mát, ngòn ngọt, vừa giúp giải nhiệt trong những ngày hè oi ả, vừa là "phương thuốc" dân gian bồi bổ sức khỏe rất được đồng bào ưa chuộng.
+    </p>
+
+    <h3 style="color: var(--earth); margin-bottom: 12px; font-size: 20px;">2. Thịt trâu gác bếp</h3>
+    <p style="font-size: 16.5px; margin-bottom: 25px; color: var(--text); line-height: 1.8; text-align: justify;">
+      Thịt trâu gác bếp không chỉ là món ăn dự trữ qua mùa mưa dầm mà còn là đặc sản để thiết đãi khách quý đến nhà. Những thớ thịt trâu tươi, săn chắc được thái dọc, tẩm ướp kỹ lưỡng với các loại gia vị nồng nàn của núi rừng như muối, ớt, tiêu rừng, sả... rồi treo lên gác bếp. Khói từ củi lửa cháy rả rích ngày qua ngày hun khô miếng thịt, làm quyện vào đó mùi hăng hăng ngai ngái của khói bếp, tạo nên vị ngọt đậm đà, dai ngon khó cưỡng khi xé từng thớ thịt.
+    </p>
+
+    <h3 style="color: var(--earth); margin-bottom: 12px; font-size: 20px;">3. Rau dớn xào tỏi</h3>
+    <p style="font-size: 16.5px; margin-bottom: 25px; color: var(--text); line-height: 1.8; text-align: justify;">
+      Rau dớn là một loại cây thuộc họ dương xỉ, thường mọc nhiều ở những vách đá ven suối hay dưới tán rừng ẩm ướt. Phần ngon nhất để chế biến là những ngọn non tơ uốn cong cuộn tròn như vòi voi. Rau dớn chần sơ qua nước sôi rồi đem xào với tỏi phi thơm lừng. Món ăn tuy chế biến cực kỳ dân dã, đơn giản nhưng lại giữ được độ giòn sần sật, vị nhơn nhớt thanh mát quyện với chút chát nhẹ, vô cùng đưa cơm.
+    </p>
+
+    <div style="text-align: center; margin-top: 30px;">
+       <button onclick="toggleMonAn(event)" style="padding: 10px 24px; background: var(--fire); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">Đóng bài viết</button>
     </div>
   </div>
 </section>
@@ -642,7 +675,20 @@ function toggleTrietLy(event) {
   }
 }
 
-// 5. Ẩn/Hiện bài viết Dân cư
+// 5. Ẩn/Hiện bài viết Các món ăn truyền thống
+function toggleMonAn(event) {
+  if(event) event.preventDefault(); 
+  
+  var section = document.getElementById("monan");
+  if (section.style.display === "none" || section.style.display === "") {
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+  } else {
+    section.style.display = "none";
+  }
+}
+
+// 6. Ẩn/Hiện bài viết Dân cư
 function toggleDanCu(event) {
   if(event) event.preventDefault();
   
@@ -655,7 +701,7 @@ function toggleDanCu(event) {
   }
 }
 
-// 6. Ẩn/Hiện bài viết Thức uống truyền thống
+// 7. Ẩn/Hiện bài viết Thức uống truyền thống
 function toggleThucUong(event) {
   if(event) event.preventDefault(); 
   
@@ -668,7 +714,7 @@ function toggleThucUong(event) {
   }
 }
 
-// 7. Đồng hồ thời gian thực
+// 8. Đồng hồ thời gian thực
 function updateClock() {
     const now = new Date();
     const timeStr = now.toLocaleTimeString('vi-VN', { hour12: false });
