@@ -22,7 +22,6 @@
   --text: #452616;      
   --text-light: #704733;
 }
-/* ĐÃ FIX: Sửa dấu '-' thành '*' để reset CSS hoạt động chính xác */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -31,7 +30,6 @@ body {
   background: var(--straw);
   line-height: 1.7;
 }
-/* ĐÃ FIX: Thêm line-height chuẩn cho các thẻ tiêu đề để không bị cắt chân chữ */
 h1, h2, h3, h4, h5, h6 { line-height: 1.4; }
 a { text-decoration: none; color: inherit; }
 
@@ -48,7 +46,6 @@ header {
   display: flex; align-items: center; justify-content: space-between;
   gap: 20px;
 }
-/* ĐÃ FIX: Bổ sung line-height và padding để text H'RÊ không bị xén */
 .brand { font-size: 20px; font-weight: 900; color: var(--fire); text-transform: uppercase; line-height: 1.4; padding-bottom: 4px; }
 .brand small { display: block; font-size: 10px; letter-spacing: 3px; color: var(--wood); margin-top: 3px; font-weight: 600;}
 
@@ -74,7 +71,6 @@ nav .dropdown {
   transform: translateY(10px); transition: all 0.3s ease; z-index: 200;
 }
 nav li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-/* ĐÃ FIX: Bổ sung display: block và line-height để text tự đẩy viền cao lên khi xuống dòng */
 nav .dropdown a {
   display: block; 
   padding: 14px 20px; font-size: 14px; font-weight: 500;
@@ -224,7 +220,6 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
   nav li { width: 100%; border-bottom: 1px solid #f0e6dc; }
   nav li:last-child { border-bottom: none; }
   nav > ul > li > a { padding: 15px 0; width: 100%; justify-content: space-between; font-size: 15px; }
-  /* ĐÃ FIX: Thêm thuộc tính height: auto để thẻ tự giãn theo chữ */
   nav .dropdown {
     position: static; box-shadow: none; background: #fff9f5;
     opacity: 1; visibility: visible; transform: none; border: none;
@@ -679,9 +674,10 @@ const lightbox = GLightbox({
     zoomable: true
 });
 
-// 2. Đóng menu mobile khi click 
-document.querySelectorAll('nav > ul > li > a').forEach(link => {
+// 2. Đóng menu mobile khi click (ĐÃ CẬP NHẬT ĐỂ ÁP DỤNG CẢ CHO MENU CON)
+document.querySelectorAll('nav a').forEach(link => {
  link.addEventListener('click', (e) => {
+  // Chỉ ẩn menu nếu thiết bị là Mobile và link click không chứa dấu '▾' (không phải là thẻ bấm mở menu con)
   if(window.innerWidth <= 850 && !link.textContent.includes('▾')) {
    document.querySelector('nav').classList.remove('open');
   }
