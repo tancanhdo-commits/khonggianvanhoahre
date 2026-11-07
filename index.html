@@ -62,7 +62,8 @@ nav a:hover { color: var(--fire); }
 
 /* Sub-menu */
 nav .dropdown {
-  position: absolute; top: 100%; left: -10px;
+  position: absolute; top: 100%; left: 0;
+  margin-top: 15px; 
   background: #ffffff; min-width: 240px;
   display: flex; flex-direction: column;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -276,7 +277,7 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
      <li>
        <a href="#lehoi">LỄ HỘI ▾</a>
        <div class="dropdown">
-         <a href="#mungluamoi">Lễ hội mừng lúa mới</a>
+         <a href="#" onclick="toggleMungLuaMoi(event)">Lễ hội mừng lúa mới</a>
          <a href="#damcuoi">Phong tục cưới hỏi</a>
          <a href="#congchieng">Nghệ thuật cồng chiêng</a>
        </div>
@@ -570,8 +571,50 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
     </div>
   </div>
 </section>
-        <div style="text-align: center; margin-top: 30px;">
-       <button onclick="toggleThucUong(event)" style="padding: 10px 24px; background: var(--fire); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">Đóng bài viết</button>
+
+<!-- ========================================== -->
+<!-- BÀI VIẾT LỄ MỪNG LÚA MỚI (Mặc định ẩn) -->
+<!-- ========================================== -->
+<section class="section" id="mungluamoi" style="padding-top: 40px; display: none;">
+  <div class="heading">
+    <span>TẠ ƠN ĐẤT TRỜI</span>
+    <h2>LỄ HỘI MỪNG LÚA MỚI</h2>
+    <p>Nét đẹp tâm linh và tinh thần gắn kết cộng đồng của người H'rê</p>
+  </div>
+  
+  <div style="max-width: 1000px; margin: auto; background: #ffffff; padding: 45px 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(156, 75, 34, 0.08); border-left: 6px solid var(--fire); border-right: 1px solid #f3e5db; border-top: 1px solid #f3e5db; border-bottom: 1px solid #f3e5db;">
+    
+    <!-- PHẦN 1 -->
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-bottom: 40px; border-bottom: 1px dashed #fed7aa; padding-bottom: 40px;">
+      <div style="flex: 1; min-width: 300px;">
+        <img src="https://images.unsplash.com/photo-1542640244-7e672d6cb466?auto=format&fit=crop&w=800&q=80" alt="Nghi thức cúng lúa mới" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+      </div>
+      <div style="flex: 1.5; min-width: 300px;">
+        <h3 style="color: var(--earth); margin-bottom: 15px; font-size: 24px;">Ý nghĩa thiêng liêng của Lễ mừng lúa mới</h3>
+        <p style="font-size: 16.5px; color: var(--text); line-height: 1.8; text-align: justify;">
+          Lễ mừng lúa mới (hay còn gọi là Tết rạ) là nghi lễ quan trọng bậc nhất trong năm của đồng bào H'rê. Sau khi kết thúc mùa vụ, lúa đã được đưa về đầy kho, các gia đình và bản làng sẽ tổ chức lễ cúng để tạ ơn thần linh (Yang), thần lúa và ông bà tổ tiên đã ban cho một mùa màng bội thu, mưa thuận gió hòa, con cháu khỏe mạnh. Đây cũng là dịp để cầu mong cho vụ mùa năm sau tiếp tục no ấm, lúa ngô trĩu hạt.
+        </p>
+      </div>
+    </div>
+
+    <!-- PHẦN 2 (Đảo ngược ảnh sang phải) -->
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-bottom: 20px; flex-direction: row-reverse;">
+      <div style="flex: 1; min-width: 300px;">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80" alt="Không khí lễ hội" style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+      </div>
+      <div style="flex: 1.5; min-width: 300px;">
+        <h3 style="color: var(--earth); margin-bottom: 15px; font-size: 24px;">Rộn ràng âm vang ngày hội</h3>
+        <p style="font-size: 16.5px; margin-bottom: 15px; color: var(--text); line-height: 1.8; text-align: justify;">
+          Lễ vật dâng lên thần linh không thể thiếu mâm cơm gạo mới thơm lừng, ché rượu cần ủ men lá rừng đượm vị, cùng thịt heo, thịt gà bản. Lễ cúng thường diễn ra tại không gian thiêng liêng nhất của ngôi nhà sàn, do già làng làm chủ tế đối với lễ chung của bản, và gia trưởng làm chủ tế tại gia đình.
+        </p>
+        <p style="font-size: 16.5px; color: var(--text); line-height: 1.8; text-align: justify;">
+          Sau phần lễ trang nghiêm là phần hội tưng bừng. Cả bản làng cùng quây quần bên ché rượu cần, thưởng thức những món ăn truyền thống. Tiếng cồng chiêng ngân vang khắp núi rừng, hòa cùng điệu múa uyển chuyển của các thiếu nữ và những làn điệu dân ca Ta-lêu, Ca-choi say đắm lòng người. Lễ mừng lúa mới thực sự là sợi dây tâm linh bền chặt, gắn kết cộng đồng người H'rê qua bao thế hệ.
+        </p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+       <button onclick="toggleMungLuaMoi(event)" style="padding: 12px 28px; background: var(--fire); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;">Đóng bài viết</button>
     </div>
   </div>
 </section>
@@ -643,8 +686,8 @@ footer p { font-size: 15px; margin-bottom: 10px; color: #fbd38d; }
     <img src="damtrau.jpg" alt="Lễ hội Đâm trâu">
    </a> 
   <a href="cungnhamoi.jpg" class="glightbox gallery-item" data-title="Lễ Cúng nhà mới">
-  <img src="cungnhamoi.jpg" alt="Lễ Cúng nhà mới" 
-</a>
+    <img src="cungnhamoi.jpg" alt="Lễ Cúng nhà mới" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80'">
+  </a>
  </div>
  <div class="callout">
   <h3>Chung tay góp củi giữ lửa di sản H'rê</h3>
@@ -776,7 +819,20 @@ function toggleThucUong(event) {
   }
 }
 
-// 8. Đồng hồ thời gian thực
+// 8. Ẩn/Hiện bài viết Lễ mừng lúa mới
+function toggleMungLuaMoi(event) {
+  if(event) event.preventDefault(); 
+  
+  var section = document.getElementById("mungluamoi");
+  if (section.style.display === "none" || section.style.display === "") {
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+  } else {
+    section.style.display = "none";
+  }
+}
+
+// 9. Đồng hồ thời gian thực
 function updateClock() {
     const now = new Date();
     const timeStr = now.toLocaleTimeString('vi-VN', { hour12: false });
